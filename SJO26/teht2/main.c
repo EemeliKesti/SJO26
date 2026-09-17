@@ -1,4 +1,4 @@
-//Tavoittelen 1p pisteytystä vaikkakin palautus on myöhässä.
+//Tavoittelen tästä tehtävästä 1 pistettä, palautuksen myöhästymisestä huolimatta
 
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
@@ -26,14 +26,13 @@ static const struct gpio_dt_spec red   = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios)
 static const struct gpio_dt_spec green = GPIO_DT_SPEC_GET(DT_ALIAS(led1), gpios);
 static const struct gpio_dt_spec blue  = GPIO_DT_SPEC_GET(DT_ALIAS(led2), gpios);
 
-// Forward declarations
+
 int init_led(void);
 void red_led_task(void *, void *, void *);
 void green_led_task(void *, void *, void *);
 void yellow_led_task(void *, void *, void *);
 
-// Persistent worker threads, started once at boot; each blocks on its
-// own condvar until the dispatcher signals it.
+
 K_THREAD_DEFINE(red_thread,    STACKSIZE, red_led_task,    NULL, NULL, NULL, PRIORITY, 0, 0);
 K_THREAD_DEFINE(green_thread,  STACKSIZE, green_led_task,  NULL, NULL, NULL, PRIORITY, 0, 0);
 K_THREAD_DEFINE(yellow_thread, STACKSIZE, yellow_led_task, NULL, NULL, NULL, PRIORITY, 0, 0);
