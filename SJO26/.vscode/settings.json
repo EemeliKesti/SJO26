@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "C:/Users/OMISTAJA/Documents/SJO26/SJO26/teht1",
+    "nrf-connect.applications": [
+        "${workspaceFolder}\\vkteht4"
+    ]
+}
