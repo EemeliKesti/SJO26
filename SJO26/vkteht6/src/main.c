@@ -1,4 +1,4 @@
-// Tavoittelen tästä tehtävästä 1 pistettä
+// Tavoittelen tästä tehtävästä 1 pistettä, tehtävä täyttää yhden pisteen kriteerit
 
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
